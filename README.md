@@ -30,8 +30,6 @@ python -m venv venv
 source venv/bin/activate # On Windows: venv\Scripts\activate
 pip install -e .
 
-text
-
 
 ### Setup
 
@@ -40,13 +38,9 @@ text
 2. Create `.env` file with:
 GROQ_API_KEY=your_api_key_here
 
-text
-
 
 3. Initialize:
 codeguardian init
-
-text
 
 
 ## Your First Review
@@ -62,8 +56,6 @@ codeguardian review --focus security
 Performance-focused review
 codeguardian review --focus performance
 
-text
-
 
 ## Commands
 
@@ -74,8 +66,6 @@ codeguardian review # Review all staged
 codeguardian review main.py # Specific files
 codeguardian review --focus security # Security focus
 codeguardian review --verbose # Show diffs
-
-text
 
 
 **Options:**
@@ -89,23 +79,17 @@ text
 Show git repository status.
 codeguardian status
 
-text
-
 
 ### codeguardian version
 
 Display version information.
 codeguardian version
 
-text
-
 
 ### codeguardian init
 
 Initialize configuration file.
 codeguardian init
-
-text
 
 
 ## Configuration
@@ -128,7 +112,6 @@ include_patterns:
 "*.js"
 "*.ts"
 "*.java"
-text
 
 
 ## Features
@@ -143,8 +126,6 @@ Analyzes code using Groq's Llama 3.3 70B:
 ### Security Review
 codeguardian review --focus security
 
-text
-
 
 Focus on security vulnerabilities:
 - SQL injection risks
@@ -154,8 +135,6 @@ Focus on security vulnerabilities:
 
 ### Performance Review
 codeguardian review --focus performance
-
-text
 
 
 Focus on optimizations:
@@ -206,8 +185,6 @@ Get beautiful review
 ↓
 Fix issues & commit! 🚀
 
-text
-
 
 ## Contributing
 
@@ -223,15 +200,11 @@ python -m venv venv
 source venv/bin/activate
 pip install -e .
 
-text
-
 
 ## License
 
 MIT License - See LICENSE file for details.
 Made with 💜 by Bisti Ghosh
-
-text
 
 
 ## Roadmap
@@ -258,8 +231,6 @@ text
 ║ ║
 ║ "Code that reviews itself" ║
 ╚═══════════════════════════════╝
-
-text
 
 
 ⭐ If you love CodeGuardian, star the repo!
