@@ -1,7 +1,7 @@
-streamlit
-groq
-gitpython
-pyyaml
-python-dotenv
-typer
-rich
+streamlit>=1.31.0
+groq>=0.4.1
+gitpython>=3.1.41
+pyyaml>=6.0.1
+python-dotenv>=1.0.1
+typer>=0.9.4
+rich>=13.7.0
