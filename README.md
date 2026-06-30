@@ -1,3 +1,4 @@
+===START===
 # CodeGuardian AI 💜🤖
 
 Your AI pair programmer that reviews code before you commit!
@@ -23,8 +24,244 @@ CodeGuardian AI is a terminal-based code review assistant powered by Groq's AI. 
 ## Quick Start
 
 ### Installation
-
-```bash
 git clone https://github.com/bistighosh16/codeguardian-ai.git
 cd codeguardian-ai
+python -m venv venv
+source venv/bin/activate # On Windows: venv\Scripts\activate
 pip install -e .
+
+text
+
+
+### Setup
+
+1. Get a free Groq API key at [console.groq.com](https://console.groq.com)
+
+2. Create `.env` file with:
+GROQ_API_KEY=your_api_key_here
+
+text
+
+
+3. Initialize:
+codeguardian init
+
+text
+
+
+## Your First Review
+Stage your changes
+git add <files>
+
+Run CodeGuardian
+codeguardian review
+
+Security-focused review
+codeguardian review --focus security
+
+Performance-focused review
+codeguardian review --focus performance
+
+text
+
+
+## Commands
+
+### codeguardian review
+
+Review staged git changes with AI.
+codeguardian review # Review all staged
+codeguardian review main.py # Specific files
+codeguardian review --focus security # Security focus
+codeguardian review --verbose # Show diffs
+
+text
+
+
+**Options:**
+- `--focus / -f` : general, security, performance
+- `--commit / -c` : Review specific commit
+- `--verbose / -v` : Detailed output
+- `--init` : Initialize config
+
+### codeguardian status
+
+Show git repository status.
+codeguardian status
+
+text
+
+
+### codeguardian version
+
+Display version information.
+codeguardian version
+
+text
+
+
+### codeguardian init
+
+Initialize configuration file.
+codeguardian init
+
+text
+
+
+## Configuration
+
+CodeGuardian looks for `.codeguardian.yml`:
+focus: general
+max_tokens: 2000
+auto_stage: false
+verbose: false
+
+exclude_patterns:
+
+"*.lock"
+"*.json"
+"pycache"
+".git"
+include_patterns:
+
+"*.py"
+"*.js"
+"*.ts"
+"*.java"
+text
+
+
+## Features
+
+### AI Code Review
+
+Analyzes code using Groq's Llama 3.3 70B:
+- Identifies bugs and code smells
+- Provides actionable suggestions
+- Rates severity: CRITICAL, HIGH, MEDIUM, LOW
+
+### Security Review
+codeguardian review --focus security
+
+text
+
+
+Focus on security vulnerabilities:
+- SQL injection risks
+- XSS vulnerabilities
+- Hardcoded secrets
+- Authentication issues
+
+### Performance Review
+codeguardian review --focus performance
+
+text
+
+
+Focus on optimizations:
+- Algorithm efficiency
+- Database optimization
+- Memory leaks
+- Resource management
+
+### Beautiful Terminal UI
+
+- Purple-themed interface 💜
+- ASCII art banner
+- Syntax-highlighted diffs
+- Progress spinners
+- Organized tables
+
+### Git Integration
+
+- Review staged changes
+- Review specific files
+- Review commits
+- Smart diff parsing
+- Language detection
+
+## Supported Languages
+
+Python, JavaScript, TypeScript, Java, C, C++, C#, Go, Rust, PHP, Ruby, Swift, Kotlin, Scala, SQL, Bash, and more!
+
+## Tech Stack
+
+- **Python 3.11+** - Core language
+- **Typer** - CLI framework
+- **Rich** - Terminal UI
+- **Groq API** - AI review
+- **GitPython** - Git integration
+- **PyYAML** - Configuration
+
+## How It Works
+You stage changes
+↓
+codeguardian review
+↓
+Extract git diff
+↓
+Send to Groq AI
+↓
+Get beautiful review
+↓
+Fix issues & commit! 🚀
+
+text
+
+
+## Contributing
+
+We'd love contributions!
+
+1. Fork the repo
+2. Create feature branch
+3. Make changes
+4. Submit PR
+git clone https://github.com/bistighosh16/codeguardian-ai.git
+cd codeguardian-ai
+python -m venv venv
+source venv/bin/activate
+pip install -e .
+
+text
+
+
+## License
+
+MIT License - See LICENSE file for details.
+Made with 💜 by Bisti Ghosh
+
+text
+
+
+## Roadmap
+
+- [ ] Publish to PyPI
+- [ ] GitHub Actions integration
+- [ ] Pre-commit hook support
+- [ ] VS Code extension
+- [ ] Web UI dashboard
+- [ ] Custom AI model support
+- [ ] Team collaboration features
+- [ ] CI/CD pipeline integration
+
+## Get in Touch
+
+- 🐙 GitHub: [@bistighosh16](https://github.com/bistighosh16)
+- 💼 LinkedIn: [Bisti Ghosh](https://www.linkedin.com/in/bisti-ghosh-it-660488387/)
+
+---
+
+**CodeGuardian AI** - Because great code deserves a great reviewer!
+╔═══════════════════════════════╗
+║ Made with 💜 by Vivi ║
+║ ║
+║ "Code that reviews itself" ║
+╚═══════════════════════════════╝
+
+text
+
+
+⭐ If you love CodeGuardian, star the repo!
+
+**Happy coding! 🚀💜**
