@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codeguardian-ai"
+version = "0.1.0"
+description = "AI-powered code review assistant for your terminal"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Vivi (Bisti Ghosh)", email = "your.email@example.com"},
+]
+keywords = ["ai", "code-review", "cli", "groq", "python"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Tools",
+]
+
+dependencies = [
+    "typer==0.9.4",
+    "rich==13.7.0",
+    "groq==0.4.1",
+    "gitpython==3.1.41",
+    "pyyaml==6.0.1",
+    "python-dotenv==1.0.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/bistighosh16/codeguardian-ai"
+Repository = "https://github.com/bistighosh16/codeguardian-ai"
+Issues = "https://github.com/bistighosh16/codeguardian-ai/issues"
+
+[project.scripts]
+codeguardian = "codeguardian.cli:main"
+
+[tool.setuptools]
+packages = ["codeguardian", "codeguardian.components"]
