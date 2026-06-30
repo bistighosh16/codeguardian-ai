@@ -1,4 +1,3 @@
-===START===
 # CodeGuardian AI 💜🤖
 
 Your AI pair programmer that reviews code before you commit!
