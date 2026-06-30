@@ -6,19 +6,32 @@ Your AI pair programmer that reviews code before you commit!
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Made with 💜](https://img.shields.io/badge/Made%20with-💜-magenta)](https://github.com/bistighosh16/codeguardian-ai)
 
+
+## 🚀 Live Demo
+
+**Try it now:** [https://codeguardian-ai.streamlit.app/](https://codeguardian-ai.streamlit.app/)
+
+No installation required! Just paste your code and get an instant AI review! ⚡
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Try%20Now-ff00ff?style=for-the-badge&logo=streamlit)](https://codeguardian-ai.streamlit.app/)
+
+---
+
+## ✨ Features at a Glance
+
+- 🌐 **Web App** - Try instantly without installation
+- 💻 **CLI Tool** - Powerful terminal-based reviewer
+- 🤖 **AI-Powered** - Groq's Llama 3.3 70B
+- 🎨 **Cyberpunk UI** - Beautiful neon-themed interface
+- 🔒 **Security Focus** - Detect vulnerabilities
+- ⚡ **Performance Focus** - Optimize your code
+- 💜 **Free Forever** - Uses Groq's free API
+
+---
+
 ## What is CodeGuardian AI?
 
 CodeGuardian AI is a terminal-based code review assistant powered by Groq's AI. It analyzes your git changes and provides intelligent, constructive feedback right in your terminal!
-
-## Why CodeGuardian?
-
-- 🤖 **AI-Powered** - Uses Groq's Llama 3.3 70B
-- ⚡ **Lightning Fast** - Get reviews in seconds
-- 🔒 **Secure** - Runs locally, never exposes code
-- 🎨 **Beautiful UI** - Purple-themed terminal
-- 🔧 **Flexible** - Review staged changes or commits
-- 🎯 **Focused** - General, Security, or Performance reviews
-- 💰 **Free** - Uses Groq's free API!
 
 ## Quick Start
 
