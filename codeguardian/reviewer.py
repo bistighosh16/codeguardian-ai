@@ -40,16 +40,6 @@ class CodeReviewer:
     ) -> str:
         """
         Review code using Groq AI
-        
-        Args:
-            filename: Name of the file being reviewed
-            diff: The code diff/changes
-            language: Programming language
-            focus: Review focus - "general", "security", or "performance"
-            max_tokens: Maximum tokens in response
-        
-        Returns:
-            AI review text
         """
         
         # Generate the prompt
@@ -61,12 +51,15 @@ class CodeReviewer:
         )
         
         try:
-            # Call Groq API
-            message = self.client.messages.create(
+            # Call Groq API (CORRECT SYNTAX!)
+            chat_completion = self.client.chat.completions.create(
                 model=self.model,
                 max_tokens=max_tokens,
-                system=self.system_prompt,
                 messages=[
+                    {
+                        "role": "system",
+                        "content": self.system_prompt
+                    },
                     {
                         "role": "user",
                         "content": user_prompt
@@ -74,7 +67,7 @@ class CodeReviewer:
                 ]
             )
             
-            return message.content[0].text
+            return chat_completion.choices[0].message.content
         
         except Exception as e:
             return f"Error during review: {str(e)}"
@@ -84,16 +77,7 @@ class CodeReviewer:
         files: list,
         focus: str = "general"
     ) -> dict:
-        """
-        Review multiple files
-        
-        Args:
-            files: List of dicts with 'file', 'diff', 'language' keys
-            focus: Review focus area
-        
-        Returns:
-            Dictionary with review results
-        """
+        """Review multiple files"""
         
         results = {}
         
@@ -118,16 +102,7 @@ class CodeReviewer:
         return results
     
     def get_quick_summary(self, review_text: str, filename: str) -> str:
-        """
-        Get a quick 1-line summary of the review
-        
-        Args:
-            review_text: Full review text
-            filename: Name of file
-        
-        Returns:
-            Quick summary
-        """
+        """Get a quick 1-line summary of the review"""
         
         prompt = f"""Given this code review:
 
@@ -137,7 +112,7 @@ Provide a single-line summary (max 100 chars) for file '{filename}'.
 Start with emoji and keep it brief."""
         
         try:
-            message = self.client.messages.create(
+            chat_completion = self.client.chat.completions.create(
                 model=self.model,
                 max_tokens=100,
                 messages=[
@@ -148,17 +123,13 @@ Start with emoji and keep it brief."""
                 ]
             )
             
-            return message.content[0].text.strip()
+            return chat_completion.choices[0].message.content.strip()
         
         except Exception as e:
             return f"⚠️ Could not generate summary: {str(e)}"
     
     def extract_severity_levels(self, review_text: str) -> dict:
-        """
-        Extract severity levels from review
-        
-        Returns dict with counts of each severity
-        """
+        """Extract severity levels from review"""
         
         severities = {
             'CRITICAL': review_text.count('CRITICAL'),
